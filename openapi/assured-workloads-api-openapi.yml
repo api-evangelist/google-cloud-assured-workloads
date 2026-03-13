@@ -1,0 +1,287 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Assured Workloads API
+  description: >-
+    The Assured Workloads API enables programmatic management of compliance-
+    controlled workload environments on Google Cloud. It supports creating
+    workloads with specific compliance regimes, monitoring violations, and
+    managing organizational policies for regulatory compliance.
+  version: v1
+  contact:
+    name: Google Cloud Support
+    url: https://cloud.google.com/assured-workloads/docs/support
+  termsOfService: https://cloud.google.com/terms
+externalDocs:
+  description: Assured Workloads API Documentation
+  url: https://cloud.google.com/assured-workloads/docs/reference/rest
+servers:
+  - url: https://assuredworkloads.googleapis.com/v1
+    description: Production Server
+tags:
+  - name: Workloads
+    description: Operations for managing assured workloads
+  - name: Violations
+    description: Operations for managing compliance violations
+security:
+  - oauth2: []
+paths:
+  /organizations/{organizationId}/locations/{location}/workloads:
+    get:
+      operationId: listWorkloads
+      summary: List workloads
+      description: Lists assured workloads under a specified organization and location.
+      tags:
+        - Workloads
+      parameters:
+        - $ref: '#/components/parameters/organizationId'
+        - $ref: '#/components/parameters/location'
+        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/pageToken'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListWorkloadsResponse'
+    post:
+      operationId: createWorkload
+      summary: Create a workload
+      description: Creates a new assured workload with the specified compliance regime.
+      tags:
+        - Workloads
+      parameters:
+        - $ref: '#/components/parameters/organizationId'
+        - $ref: '#/components/parameters/location'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Workload'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /organizations/{organizationId}/locations/{location}/workloads/{workloadId}:
+    get:
+      operationId: getWorkload
+      summary: Get a workload
+      description: Gets an assured workload by resource name.
+      tags:
+        - Workloads
+      parameters:
+        - $ref: '#/components/parameters/organizationId'
+        - $ref: '#/components/parameters/location'
+        - $ref: '#/components/parameters/workloadId'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workload'
+    patch:
+      operationId: updateWorkload
+      summary: Update a workload
+      description: Updates an existing assured workload.
+      tags:
+        - Workloads
+      parameters:
+        - $ref: '#/components/parameters/organizationId'
+        - $ref: '#/components/parameters/location'
+        - $ref: '#/components/parameters/workloadId'
+        - name: updateMask
+          in: query
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Workload'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workload'
+    delete:
+      operationId: deleteWorkload
+      summary: Delete a workload
+      description: Deletes an assured workload.
+      tags:
+        - Workloads
+      parameters:
+        - $ref: '#/components/parameters/organizationId'
+        - $ref: '#/components/parameters/location'
+        - $ref: '#/components/parameters/workloadId'
+      responses:
+        '200':
+          description: Successful response
+  /organizations/{organizationId}/locations/{location}/workloads/{workloadId}/violations:
+    get:
+      operationId: listViolations
+      summary: List violations
+      description: Lists compliance violations for a workload.
+      tags:
+        - Violations
+      parameters:
+        - $ref: '#/components/parameters/organizationId'
+        - $ref: '#/components/parameters/location'
+        - $ref: '#/components/parameters/workloadId'
+        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/pageToken'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListViolationsResponse'
+components:
+  parameters:
+    organizationId:
+      name: organizationId
+      in: path
+      required: true
+      schema:
+        type: string
+    location:
+      name: location
+      in: path
+      required: true
+      schema:
+        type: string
+    workloadId:
+      name: workloadId
+      in: path
+      required: true
+      schema:
+        type: string
+    pageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+    pageToken:
+      name: pageToken
+      in: query
+      schema:
+        type: string
+  schemas:
+    Workload:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The resource name of the workload
+        displayName:
+          type: string
+          description: User-assigned display name of the workload
+        complianceRegime:
+          type: string
+          enum:
+            - FEDRAMP_HIGH
+            - FEDRAMP_MODERATE
+            - HIPAA
+            - HITRUST
+            - CJIS
+            - IL4
+            - IL5
+            - ITAR
+            - EU_REGIONS_AND_SUPPORT
+            - CA_REGIONS_AND_SUPPORT
+            - AU_REGIONS_AND_US_SUPPORT
+          description: The compliance regime for the workload
+        billingAccount:
+          type: string
+          description: The billing account for the workload
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        provisionedResourcesParent:
+          type: string
+          description: The parent of the provisioned resources folder
+        resources:
+          type: array
+          items:
+            type: object
+            properties:
+              resourceId:
+                type: integer
+              resourceType:
+                type: string
+                enum: [CONSUMER_PROJECT, CONSUMER_FOLDER, ENCRYPTION_KEYS_PROJECT, KEYRING]
+        createTime:
+          type: string
+          format: date-time
+        compliantButDisallowedServices:
+          type: array
+          items:
+            type: string
+    Violation:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        beginTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        resolveTime:
+          type: string
+          format: date-time
+        category:
+          type: string
+        state:
+          type: string
+          enum: [RESOLVED, UNRESOLVED, EXCEPTION]
+        orgPolicyConstraint:
+          type: string
+        nonCompliantOrgPolicy:
+          type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+    ListWorkloadsResponse:
+      type: object
+      properties:
+        workloads:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workload'
+        nextPageToken:
+          type: string
+    ListViolationsResponse:
+      type: object
+      properties:
+        violations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Violation'
+        nextPageToken:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud

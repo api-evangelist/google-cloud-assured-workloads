@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aw": "https://cloud.google.com/assured-workloads/ns/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Workload": {
+      "@id": "aw:Workload",
+      "@context": {
+        "name": "aw:workloadName",
+        "displayName": "schema:name",
+        "complianceRegime": "aw:complianceRegime",
+        "billingAccount": "aw:billingAccount",
+        "provisionedResourcesParent": "aw:provisionedResourcesParent",
+        "resources": "aw:resources",
+        "labels": "aw:labels",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Violation": {
+      "@id": "aw:Violation",
+      "@context": {
+        "name": "aw:violationName",
+        "description": "schema:description",
+        "category": "aw:category",
+        "state": "aw:state",
+        "orgPolicyConstraint": "aw:orgPolicyConstraint",
+        "beginTime": {
+          "@id": "aw:beginTime",
+          "@type": "xsd:dateTime"
+        },
+        "updateTime": {
+          "@id": "dcterms:modified",
+          "@type": "xsd:dateTime"
+        },
+        "resolveTime": {
+          "@id": "aw:resolveTime",
+          "@type": "xsd:dateTime"
+        }
+      }
+    }
+  }
+}

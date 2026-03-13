@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cloud.google.com/schemas/assuredworkloads/workload.json",
+  "title": "Google Cloud Assured Workloads Workload",
+  "description": "Schema for an Assured Workloads workload, representing a compliance-controlled environment on Google Cloud.",
+  "type": "object",
+  "required": ["displayName", "complianceRegime"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The resource name of the workload"
+    },
+    "displayName": {
+      "type": "string",
+      "description": "User-assigned display name of the workload"
+    },
+    "complianceRegime": {
+      "type": "string",
+      "description": "The compliance regime for the workload",
+      "enum": [
+        "FEDRAMP_HIGH",
+        "FEDRAMP_MODERATE",
+        "HIPAA",
+        "HITRUST",
+        "CJIS",
+        "IL4",
+        "IL5",
+        "ITAR",
+        "EU_REGIONS_AND_SUPPORT",
+        "CA_REGIONS_AND_SUPPORT",
+        "AU_REGIONS_AND_US_SUPPORT"
+      ]
+    },
+    "billingAccount": {
+      "type": "string",
+      "description": "The billing account associated with the workload"
+    },
+    "labels": {
+      "type": "object",
+      "description": "Labels applied to the workload",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "provisionedResourcesParent": {
+      "type": "string",
+      "description": "The parent of the folder where resources are provisioned"
+    },
+    "resources": {
+      "type": "array",
+      "description": "Resources associated with the workload",
+      "items": {
+        "$ref": "#/$defs/Resource"
+      }
+    },
+    "createTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The creation time of the workload"
+    },
+    "compliantButDisallowedServices": {
+      "type": "array",
+      "description": "Services that are compliant but not allowed for the workload",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "Resource": {
+      "type": "object",
+      "description": "A resource associated with the workload",
+      "properties": {
+        "resourceId": {
+          "type": "integer",
+          "description": "The numeric identifier of the resource"
+        },
+        "resourceType": {
+          "type": "string",
+          "description": "The type of the resource",
+          "enum": ["CONSUMER_PROJECT", "CONSUMER_FOLDER", "ENCRYPTION_KEYS_PROJECT", "KEYRING"]
+        }
+      }
+    }
+  }
+}
