@@ -1,3 +1,4 @@
+aid: google-cloud-assured-workloads
 name: Google Cloud Assured Workloads
 description: >-
   Google Cloud Assured Workloads enables organizations to create and manage
@@ -8,8 +9,9 @@ description: >-
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-assured-workloads/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
 - Compliance
 - Regulatory
@@ -39,19 +41,29 @@ apis:
     url: https://cloud.google.com/assured-workloads/docs/reference/rest
   - type: OpenAPI
     url: openapi/assured-workloads-api-openapi.yml
+  - type: Authentication
+    url: https://cloud.google.com/assured-workloads/docs/reference/rest#authentication
   - type: JSONSchema
     url: json-schema/google-cloud-assured-workloads-workload-schema.json
 common:
-- type: GettingStarted
+- type: Portal
+  url: https://cloud.google.com/assured-workloads
+- type: Getting Started
   url: https://cloud.google.com/assured-workloads/docs/quickstart
-- type: Pricing
-  url: https://cloud.google.com/assured-workloads/pricing
+- type: Documentation
+  url: https://cloud.google.com/assured-workloads/docs
 - type: Authentication
   url: https://cloud.google.com/assured-workloads/docs/reference/rest#authentication
-- type: Support
-  url: https://cloud.google.com/assured-workloads/docs/support
+- type: Pricing
+  url: https://cloud.google.com/assured-workloads/pricing
+- type: Terms of Service
+  url: https://cloud.google.com/terms
+- type: Privacy Policy
+  url: https://policies.google.com/privacy
 - type: Status
   url: https://status.cloud.google.com
+- type: Support
+  url: https://cloud.google.com/assured-workloads/docs/support
 - type: JSON-LD
   url: json-ld/google-cloud-assured-workloads-context.jsonld
 maintainers:
