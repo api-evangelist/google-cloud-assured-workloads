@@ -28,7 +28,7 @@ paths:
   /organizations/{organizationId}/locations/{location}/workloads:
     get:
       operationId: listWorkloads
-      summary: List workloads
+      summary: Google Cloud Assured Workloads List workloads
       description: Lists assured workloads under a specified organization and location.
       tags:
         - Workloads
@@ -46,7 +46,7 @@ paths:
                 $ref: '#/components/schemas/ListWorkloadsResponse'
     post:
       operationId: createWorkload
-      summary: Create a workload
+      summary: Google Cloud Assured Workloads Create a workload
       description: Creates a new assured workload with the specified compliance regime.
       tags:
         - Workloads
@@ -69,7 +69,7 @@ paths:
   /organizations/{organizationId}/locations/{location}/workloads/{workloadId}:
     get:
       operationId: getWorkload
-      summary: Get a workload
+      summary: Google Cloud Assured Workloads Get a workload
       description: Gets an assured workload by resource name.
       tags:
         - Workloads
@@ -86,7 +86,7 @@ paths:
                 $ref: '#/components/schemas/Workload'
     patch:
       operationId: updateWorkload
-      summary: Update a workload
+      summary: Google Cloud Assured Workloads Update a workload
       description: Updates an existing assured workload.
       tags:
         - Workloads
@@ -113,7 +113,7 @@ paths:
                 $ref: '#/components/schemas/Workload'
     delete:
       operationId: deleteWorkload
-      summary: Delete a workload
+      summary: Google Cloud Assured Workloads Delete a workload
       description: Deletes an assured workload.
       tags:
         - Workloads
@@ -127,7 +127,7 @@ paths:
   /organizations/{organizationId}/locations/{location}/workloads/{workloadId}/violations:
     get:
       operationId: listViolations
-      summary: List violations
+      summary: Google Cloud Assured Workloads List violations
       description: Lists compliance violations for a workload.
       tags:
         - Violations
