@@ -13,59 +13,59 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-- Compliance
-- Regulatory
-- FedRAMP
-- HIPAA
-- Data Residency
-- Governance
+  - Compliance
+  - Data Residency
+  - FedRAMP
+  - Governance
+  - HIPAA
+  - Regulatory
 apis:
-- name: Assured Workloads API
-  description: >-
-    The Assured Workloads API enables developers to programmatically create,
-    manage, and monitor compliance-controlled workload environments on Google
-    Cloud. It supports creating workloads with specific compliance regimes,
-    managing organizational policies, monitoring compliance violations, and
-    configuring data residency and access controls. The API helps organizations
-    maintain regulatory compliance across their cloud infrastructure.
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-  humanURL: https://cloud.google.com/assured-workloads/docs
-  baseURL: https://assuredworkloads.googleapis.com
-  tags:
-  - Workloads
-  - Compliance Regimes
-  - Violations
-  - Organizational Policies
-  properties:
+  - name: Assured Workloads API
+    description: >-
+      The Assured Workloads API enables developers to programmatically create,
+      manage, and monitor compliance-controlled workload environments on Google
+      Cloud. It supports creating workloads with specific compliance regimes,
+      managing organizational policies, monitoring compliance violations, and
+      configuring data residency and access controls. The API helps organizations
+      maintain regulatory compliance across their cloud infrastructure.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/assured-workloads/docs
+    baseURL: https://assuredworkloads.googleapis.com
+    tags:
+      - Compliance Regimes
+      - Organizational Policies
+      - Violations
+      - Workloads
+    properties:
+      - type: Documentation
+        url: https://cloud.google.com/assured-workloads/docs/reference/rest
+      - type: OpenAPI
+        url: openapi/assured-workloads-api-openapi.yml
+      - type: Authentication
+        url: https://cloud.google.com/assured-workloads/docs/reference/rest#authentication
+      - type: JSONSchema
+        url: json-schema/google-cloud-assured-workloads-workload-schema.json
+common:
+  - type: Portal
+    url: https://cloud.google.com/assured-workloads
+  - type: Getting Started
+    url: https://cloud.google.com/assured-workloads/docs/quickstart
   - type: Documentation
-    url: https://cloud.google.com/assured-workloads/docs/reference/rest
-  - type: OpenAPI
-    url: openapi/assured-workloads-api-openapi.yml
+    url: https://cloud.google.com/assured-workloads/docs
   - type: Authentication
     url: https://cloud.google.com/assured-workloads/docs/reference/rest#authentication
-  - type: JSONSchema
-    url: json-schema/google-cloud-assured-workloads-workload-schema.json
-common:
-- type: Portal
-  url: https://cloud.google.com/assured-workloads
-- type: Getting Started
-  url: https://cloud.google.com/assured-workloads/docs/quickstart
-- type: Documentation
-  url: https://cloud.google.com/assured-workloads/docs
-- type: Authentication
-  url: https://cloud.google.com/assured-workloads/docs/reference/rest#authentication
-- type: Pricing
-  url: https://cloud.google.com/assured-workloads/pricing
-- type: Terms of Service
-  url: https://cloud.google.com/terms
-- type: Privacy Policy
-  url: https://policies.google.com/privacy
-- type: Status
-  url: https://status.cloud.google.com
-- type: Support
-  url: https://cloud.google.com/assured-workloads/docs/support
-- type: JSON-LD
-  url: json-ld/google-cloud-assured-workloads-context.jsonld
+  - type: Pricing
+    url: https://cloud.google.com/assured-workloads/pricing
+  - type: Terms of Service
+    url: https://cloud.google.com/terms
+  - type: Privacy Policy
+    url: https://policies.google.com/privacy
+  - type: Status
+    url: https://status.cloud.google.com
+  - type: Support
+    url: https://cloud.google.com/assured-workloads/docs/support
+  - type: JSON-LD
+    url: json-ld/google-cloud-assured-workloads-context.jsonld
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com

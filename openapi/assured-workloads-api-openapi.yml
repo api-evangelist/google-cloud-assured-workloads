@@ -18,10 +18,10 @@ servers:
   - url: https://assuredworkloads.googleapis.com/v1
     description: Production Server
 tags:
-  - name: Workloads
-    description: Operations for managing assured workloads
   - name: Violations
     description: Operations for managing compliance violations
+  - name: Workloads
+    description: Operations for managing assured workloads
 security:
   - oauth2: []
 paths:
