@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Assured Workloads API — Violations
+  description: 'Google Cloud Assured Workloads API — Violations. 1 operations. Lead operation: Google Cloud Assured Workloads
+    List violations. Self-contained Naftiko capability covering one Google Cloud Assured Workloads business surface.'
+  tags:
+  - Google Cloud Assured Workloads
+  - Violations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_ASSURED_WORKLOADS_API_KEY: GOOGLE_CLOUD_ASSURED_WORKLOADS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: assured-workloads-violations
+    baseUri: https://assuredworkloads.googleapis.com/v1
+    description: Google Cloud Assured Workloads API — Violations business capability. Self-contained, no shared references.
+    resources:
+    - name: organizations-organizationId-locations-location-workloads-workloadId-violations
+      path: /organizations/{organizationId}/locations/{location}/workloads/{workloadId}/violations
+      operations:
+      - name: listviolations
+        method: GET
+        description: Google Cloud Assured Workloads List violations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_ASSURED_WORKLOADS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: assured-workloads-violations-rest
+    port: 8080
+    description: REST adapter for Google Cloud Assured Workloads API — Violations. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/organizations/{organizationid}/locations/{location}/workloads/{workloadid}/violations
+      name: organizations-organizationid-locations-location-workloads-workloadid-violations
+      description: REST surface for organizations-organizationId-locations-location-workloads-workloadId-violations.
+      operations:
+      - method: GET
+        name: listviolations
+        description: Google Cloud Assured Workloads List violations
+        call: assured-workloads-violations.listviolations
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: assured-workloads-violations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Assured Workloads API — Violations. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-cloud-assured-workloads-list
+      description: Google Cloud Assured Workloads List violations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: assured-workloads-violations.listviolations
+      outputParameters:
+      - type: object
+        mapping: $.

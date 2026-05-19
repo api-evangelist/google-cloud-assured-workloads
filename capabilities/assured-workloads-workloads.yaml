@@ -1,28 +1,25 @@
 naftiko: 1.0.0-alpha2
 info:
-  label: Google Cloud Assured Workloads API
-  description: The Assured Workloads API enables programmatic management of compliance- controlled workload environments on
-    Google Cloud. It supports creating workloads with specific compliance regimes, monitoring violations, and managing organizational
-    policies for regulatory compliance.
+  label: Google Cloud Assured Workloads API — Workloads
+  description: 'Google Cloud Assured Workloads API — Workloads. 5 operations. Lead operation: Google Cloud Assured Workloads
+    List workloads. Self-contained Naftiko capability covering one Google Cloud Assured Workloads business surface.'
   tags:
-  - Google
-  - Cloud
-  - Assured
+  - Google Cloud Assured Workloads
   - Workloads
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_ASSURED_WORKLOADS_API_KEY: GOOGLE_CLOUD_ASSURED_WORKLOADS_API_KEY
 capability:
   consumes:
   - type: http
-    namespace: google-cloud-assured-workloads
+    namespace: assured-workloads-workloads
     baseUri: https://assuredworkloads.googleapis.com/v1
-    description: Google Cloud Assured Workloads API HTTP API.
-    authentication:
-      type: bearer
-      token: '{{GOOGLE_CLOUD_ASSURED_WORKLOADS_TOKEN}}'
+    description: Google Cloud Assured Workloads API — Workloads business capability. Self-contained, no shared references.
     resources:
-    - name: organizations-organizationid-locations-location-
+    - name: organizations-organizationId-locations-location-workloads
       path: /organizations/{organizationId}/locations/{location}/workloads
       operations:
       - name: listworkloads
@@ -41,7 +38,13 @@ capability:
         - name: result
           type: object
           value: $.
-    - name: organizations-organizationid-locations-location-
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: organizations-organizationId-locations-location-workloads-workloadId
       path: /organizations/{organizationId}/locations/{location}/workloads/{workloadId}
       operations:
       - name: getworkload
@@ -55,15 +58,20 @@ capability:
       - name: updateworkload
         method: PATCH
         description: Google Cloud Assured Workloads Update a workload
-        inputParameters:
-        - name: updateMask
-          in: query
-          type: string
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: updateMask
+          in: query
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
       - name: deleteworkload
         method: DELETE
         description: Google Cloud Assured Workloads Delete a workload
@@ -72,156 +80,123 @@ capability:
         - name: result
           type: object
           value: $.
-    - name: organizations-organizationid-locations-location-
-      path: /organizations/{organizationId}/locations/{location}/workloads/{workloadId}/violations
-      operations:
-      - name: listviolations
-        method: GET
-        description: Google Cloud Assured Workloads List violations
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_ASSURED_WORKLOADS_API_KEY}}'
   exposes:
   - type: rest
+    namespace: assured-workloads-workloads-rest
     port: 8080
-    namespace: google-cloud-assured-workloads-rest
-    description: REST adapter for Google Cloud Assured Workloads API.
+    description: REST adapter for Google Cloud Assured Workloads API — Workloads. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
     resources:
-    - path: /organizations/{organizationId}/locations/{location}/workloads
-      name: listworkloads
+    - path: /v1/organizations/{organizationid}/locations/{location}/workloads
+      name: organizations-organizationid-locations-location-workloads
+      description: REST surface for organizations-organizationId-locations-location-workloads.
       operations:
       - method: GET
         name: listworkloads
         description: Google Cloud Assured Workloads List workloads
-        call: google-cloud-assured-workloads.listworkloads
+        call: assured-workloads-workloads.listworkloads
         outputParameters:
         - type: object
           mapping: $.
-    - path: /organizations/{organizationId}/locations/{location}/workloads
-      name: createworkload
-      operations:
       - method: POST
         name: createworkload
         description: Google Cloud Assured Workloads Create a workload
-        call: google-cloud-assured-workloads.createworkload
+        call: assured-workloads-workloads.createworkload
+        with:
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /organizations/{organizationId}/locations/{location}/workloads/{workloadId}
-      name: getworkload
+    - path: /v1/organizations/{organizationid}/locations/{location}/workloads/{workloadid}
+      name: organizations-organizationid-locations-location-workloads-workloadid
+      description: REST surface for organizations-organizationId-locations-location-workloads-workloadId.
       operations:
       - method: GET
         name: getworkload
         description: Google Cloud Assured Workloads Get a workload
-        call: google-cloud-assured-workloads.getworkload
+        call: assured-workloads-workloads.getworkload
         outputParameters:
         - type: object
           mapping: $.
-    - path: /organizations/{organizationId}/locations/{location}/workloads/{workloadId}
-      name: updateworkload
-      operations:
       - method: PATCH
         name: updateworkload
         description: Google Cloud Assured Workloads Update a workload
-        call: google-cloud-assured-workloads.updateworkload
+        call: assured-workloads-workloads.updateworkload
+        with:
+          updateMask: rest.updateMask
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /organizations/{organizationId}/locations/{location}/workloads/{workloadId}
-      name: deleteworkload
-      operations:
       - method: DELETE
         name: deleteworkload
         description: Google Cloud Assured Workloads Delete a workload
-        call: google-cloud-assured-workloads.deleteworkload
-        outputParameters:
-        - type: object
-          mapping: $.
-    - path: /organizations/{organizationId}/locations/{location}/workloads/{workloadId}/violations
-      name: listviolations
-      operations:
-      - method: GET
-        name: listviolations
-        description: Google Cloud Assured Workloads List violations
-        call: google-cloud-assured-workloads.listviolations
+        call: assured-workloads-workloads.deleteworkload
         outputParameters:
         - type: object
           mapping: $.
   - type: mcp
+    namespace: assured-workloads-workloads-mcp
     port: 9090
-    namespace: google-cloud-assured-workloads-mcp
     transport: http
-    description: MCP adapter for Google Cloud Assured Workloads API for AI agent use.
+    description: MCP adapter for Google Cloud Assured Workloads API — Workloads. One tool per consumed operation, routed inline
+      through this capability's consumes block.
     tools:
-    - name: listworkloads
+    - name: google-cloud-assured-workloads-list
       description: Google Cloud Assured Workloads List workloads
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-cloud-assured-workloads.listworkloads
+      call: assured-workloads-workloads.listworkloads
       outputParameters:
       - type: object
         mapping: $.
-    - name: createworkload
+    - name: google-cloud-assured-workloads-create
       description: Google Cloud Assured Workloads Create a workload
       hints:
         readOnly: false
         destructive: false
         idempotent: false
-      call: google-cloud-assured-workloads.createworkload
+      call: assured-workloads-workloads.createworkload
+      with:
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: getworkload
+    - name: google-cloud-assured-workloads-get
       description: Google Cloud Assured Workloads Get a workload
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-cloud-assured-workloads.getworkload
+      call: assured-workloads-workloads.getworkload
       outputParameters:
       - type: object
         mapping: $.
-    - name: updateworkload
+    - name: google-cloud-assured-workloads-update
       description: Google Cloud Assured Workloads Update a workload
       hints:
         readOnly: false
         destructive: false
-        idempotent: false
-      call: google-cloud-assured-workloads.updateworkload
+        idempotent: true
+      call: assured-workloads-workloads.updateworkload
       with:
         updateMask: tools.updateMask
-      inputParameters:
-      - name: updateMask
-        type: string
-        description: updateMask
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: deleteworkload
+    - name: google-cloud-assured-workloads-delete
       description: Google Cloud Assured Workloads Delete a workload
       hints:
         readOnly: false
         destructive: true
         idempotent: true
-      call: google-cloud-assured-workloads.deleteworkload
+      call: assured-workloads-workloads.deleteworkload
       outputParameters:
       - type: object
         mapping: $.
-    - name: listviolations
-      description: Google Cloud Assured Workloads List violations
-      hints:
-        readOnly: true
-        destructive: false
-        idempotent: true
-      call: google-cloud-assured-workloads.listviolations
-      outputParameters:
-      - type: object
-        mapping: $.
-binds:
-- namespace: env
-  keys:
-    GOOGLE_CLOUD_ASSURED_WORKLOADS_TOKEN: GOOGLE_CLOUD_ASSURED_WORKLOADS_TOKEN
