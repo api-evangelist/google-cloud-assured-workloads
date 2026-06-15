@@ -1,0 +1,229 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Assured Workloads API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workloads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Assured Workloads List workloads",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://assuredworkloads.googleapis.com/v1/organizations/:organizationId/locations/:location/workloads",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists assured workloads under a specified organization and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Assured Workloads Create a workload",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://assuredworkloads.googleapis.com/v1/organizations/:organizationId/locations/:location/workloads",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new assured workload with the specified compliance regime."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Assured Workloads Get a workload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://assuredworkloads.googleapis.com/v1/organizations/:organizationId/locations/:location/workloads/:workloadId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workloadId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets an assured workload by resource name."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Assured Workloads Update a workload",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://assuredworkloads.googleapis.com/v1/organizations/:organizationId/locations/:location/workloads/:workloadId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "updateMask",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing assured workload."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Assured Workloads Delete a workload",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://assuredworkloads.googleapis.com/v1/organizations/:organizationId/locations/:location/workloads/:workloadId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workloadId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an assured workload."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Violations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Assured Workloads List violations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://assuredworkloads.googleapis.com/v1/organizations/:organizationId/locations/:location/workloads/:workloadId/violations",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists compliance violations for a workload."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
