@@ -5,7 +5,7 @@ description: >-
   Cloud. It provides guardrails for regulatory compliance frameworks such as FedRAMP, HIPAA, CJIS, ITAR, and others by
   enforcing organizational policies, data residency requirements, and access controls on cloud resources within
   designated workload environments.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-assured-workloads/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -25,7 +25,7 @@ apis:
       workload environments on Google Cloud. It supports creating workloads with specific compliance regimes, managing
       organizational policies, monitoring compliance violations, and configuring data residency and access controls. The
       API helps organizations maintain regulatory compliance across their cloud infrastructure.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/assured-workloads/docs
     baseURL: https://assuredworkloads.googleapis.com
     tags:
