@@ -43,6 +43,8 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-assured-workloads-workload-schema.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-cloud-assured-workloads-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
   - type: Portal
@@ -67,6 +69,8 @@ common:
     url: json-ld/google-cloud-assured-workloads-context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
+  - url: https://docs.cloud.google.com/feeds/assuredworkloads-release-notes.xml
+    type: Blog
 integrations:
   - name: Become a Partner
 maintainers:
