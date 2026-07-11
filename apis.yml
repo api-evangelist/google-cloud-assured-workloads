@@ -43,6 +43,12 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-assured-workloads-workload-schema.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-assured-workloads-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-assured-workloads-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-assured-workloads-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-assured-workloads-scopes.yml
   - type: GitHubOrganization
