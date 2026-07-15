@@ -43,6 +43,8 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-assured-workloads-workload-schema.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-cloud-assured-workloads-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-cloud-assured-workloads-vulnerability-disclosure.yml
   - type: DomainSecurity
