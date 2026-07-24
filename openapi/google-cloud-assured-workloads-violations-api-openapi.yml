@@ -1,0 +1,118 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Assured Workloads Violations API
+  description: The Assured Workloads API enables programmatic management of compliance- controlled workload environments on Google Cloud. It supports creating workloads with specific compliance regimes, monitoring violations, and managing organizational policies for regulatory compliance.
+  version: v1
+  contact:
+    name: Google Cloud Support
+    url: https://cloud.google.com/assured-workloads/docs/support
+  termsOfService: https://cloud.google.com/terms
+servers:
+- url: https://assuredworkloads.googleapis.com/v1
+  description: Production Server
+security:
+- oauth2: []
+tags:
+- name: Violations
+  description: Operations for managing compliance violations
+paths:
+  /organizations/{organizationId}/locations/{location}/workloads/{workloadId}/violations:
+    get:
+      operationId: listViolations
+      summary: Google Cloud Assured Workloads List violations
+      description: Lists compliance violations for a workload.
+      tags:
+      - Violations
+      parameters:
+      - $ref: '#/components/parameters/organizationId'
+      - $ref: '#/components/parameters/location'
+      - $ref: '#/components/parameters/workloadId'
+      - $ref: '#/components/parameters/pageSize'
+      - $ref: '#/components/parameters/pageToken'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListViolationsResponse'
+components:
+  parameters:
+    organizationId:
+      name: organizationId
+      in: path
+      required: true
+      schema:
+        type: string
+    location:
+      name: location
+      in: path
+      required: true
+      schema:
+        type: string
+    pageToken:
+      name: pageToken
+      in: query
+      schema:
+        type: string
+    pageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+    workloadId:
+      name: workloadId
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    ListViolationsResponse:
+      type: object
+      properties:
+        violations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Violation'
+        nextPageToken:
+          type: string
+    Violation:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        beginTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        resolveTime:
+          type: string
+          format: date-time
+        category:
+          type: string
+        state:
+          type: string
+          enum:
+          - RESOLVED
+          - UNRESOLVED
+          - EXCEPTION
+        orgPolicyConstraint:
+          type: string
+        nonCompliantOrgPolicy:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud
+externalDocs:
+  description: Assured Workloads API Documentation
+  url: https://cloud.google.com/assured-workloads/docs/reference/rest
