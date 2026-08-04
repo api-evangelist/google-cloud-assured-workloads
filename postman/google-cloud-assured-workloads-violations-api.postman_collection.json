@@ -1,0 +1,244 @@
+{
+  "info": {
+    "_postman_id": "76d15536-7054-4ed0-a457-a862ecbcfd4c",
+    "name": "Google Cloud Assured Workloads Violations API",
+    "description": "The Assured Workloads API enables programmatic management of compliance- controlled workload environments on Google Cloud. It supports creating workloads with specific compliance regimes, monitoring violations, and managing organizational policies for regulatory compliance.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:55.000Z",
+    "updatedAt": "2026-07-28T01:45:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-76d15536-7054-4ed0-a457-a862ecbcfd4c"
+  },
+  "item": [
+    {
+      "name": "organizations",
+      "item": [
+        {
+          "name": "{organizationId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "workloads",
+                      "item": [
+                        {
+                          "name": "{workloadId}",
+                          "item": [
+                            {
+                              "name": "violations",
+                              "item": [
+                                {
+                                  "name": "Google Cloud Assured Workloads List violations",
+                                  "id": "af9a28d7-7993-4143-9778-a8b63937501d",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads/:workloadId/violations?pageSize=<integer>&pageToken=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "organizations",
+                                        ":organizationId",
+                                        "locations",
+                                        ":location",
+                                        "workloads",
+                                        ":workloadId",
+                                        "violations"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "pageSize",
+                                          "value": "<integer>"
+                                        },
+                                        {
+                                          "key": "pageToken",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "3788b68f-eb14-4fb8-8c81-d22f20c6a824",
+                                          "key": "organizationId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "14b32b4b-59d6-4c2a-b701-e399707e9bcd",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "fcdd7159-2538-4bba-83e4-b99ca77efd21",
+                                          "key": "workloadId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Lists compliance violations for a workload."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "daf81fa6-8bf0-477f-ac80-c7cbc55b72b1",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads/:workloadId/violations?pageSize=<integer>&pageToken=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "organizations",
+                                            ":organizationId",
+                                            "locations",
+                                            ":location",
+                                            "workloads",
+                                            ":workloadId",
+                                            "violations"
+                                          ],
+                                          "query": [
+                                            {
+                                              "key": "pageSize",
+                                              "value": "<integer>"
+                                            },
+                                            {
+                                              "key": "pageToken",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "organizationId"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "workloadId"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"violations\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"beginTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"resolveTime\": \"<dateTime>\",\n      \"category\": \"<string>\",\n      \"state\": \"EXCEPTION\",\n      \"orgPolicyConstraint\": \"<string>\",\n      \"nonCompliantOrgPolicy\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"beginTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"resolveTime\": \"<dateTime>\",\n      \"category\": \"<string>\",\n      \"state\": \"RESOLVED\",\n      \"orgPolicyConstraint\": \"<string>\",\n      \"nonCompliantOrgPolicy\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                                      "createdAt": "2026-07-28T01:45:55.000Z",
+                                      "updatedAt": "2026-07-28T01:45:55.000Z",
+                                      "uid": "35240-daf81fa6-8bf0-477f-ac80-c7cbc55b72b1"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:45:55.000Z",
+                                  "updatedAt": "2026-07-28T01:45:55.000Z",
+                                  "uid": "35240-af9a28d7-7993-4143-9778-a8b63937501d"
+                                }
+                              ],
+                              "id": "5df90ad4-8c8f-42d1-a7b6-dcc7d3971c18",
+                              "createdAt": "2026-07-28T01:45:55.000Z",
+                              "updatedAt": "2026-07-28T01:45:55.000Z",
+                              "uid": "35240-5df90ad4-8c8f-42d1-a7b6-dcc7d3971c18"
+                            }
+                          ],
+                          "id": "cbc973f0-58fb-409f-891a-7c8018a3468f",
+                          "createdAt": "2026-07-28T01:45:55.000Z",
+                          "updatedAt": "2026-07-28T01:45:55.000Z",
+                          "uid": "35240-cbc973f0-58fb-409f-891a-7c8018a3468f"
+                        }
+                      ],
+                      "id": "e29b7c05-a80d-4ba4-b049-47729f2fc4e4",
+                      "createdAt": "2026-07-28T01:45:55.000Z",
+                      "updatedAt": "2026-07-28T01:45:55.000Z",
+                      "uid": "35240-e29b7c05-a80d-4ba4-b049-47729f2fc4e4"
+                    }
+                  ],
+                  "id": "ee642d5b-409c-43b6-a6f3-1184a0712c0f",
+                  "createdAt": "2026-07-28T01:45:55.000Z",
+                  "updatedAt": "2026-07-28T01:45:55.000Z",
+                  "uid": "35240-ee642d5b-409c-43b6-a6f3-1184a0712c0f"
+                }
+              ],
+              "id": "2ef00515-0da6-4f0d-9608-d5fc29ec3a39",
+              "createdAt": "2026-07-28T01:45:55.000Z",
+              "updatedAt": "2026-07-28T01:45:55.000Z",
+              "uid": "35240-2ef00515-0da6-4f0d-9608-d5fc29ec3a39"
+            }
+          ],
+          "id": "39f9fd1b-9193-41ba-8e90-86d38effe81f",
+          "createdAt": "2026-07-28T01:45:55.000Z",
+          "updatedAt": "2026-07-28T01:45:55.000Z",
+          "uid": "35240-39f9fd1b-9193-41ba-8e90-86d38effe81f"
+        }
+      ],
+      "id": "89e8cfd8-3b5a-4512-ab22-933b926d9f12",
+      "createdAt": "2026-07-28T01:45:55.000Z",
+      "updatedAt": "2026-07-28T01:45:55.000Z",
+      "uid": "35240-89e8cfd8-3b5a-4512-ab22-933b926d9f12"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://assuredworkloads.googleapis.com/v1"
+    }
+  ]
+}

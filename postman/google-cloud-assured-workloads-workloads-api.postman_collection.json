@@ -1,0 +1,721 @@
+{
+  "info": {
+    "_postman_id": "db0e174b-7c56-4608-a778-f09bf7daac63",
+    "name": "Google Cloud Assured Violations Workloads API",
+    "description": "The Assured Workloads API enables programmatic management of compliance- controlled workload environments on Google Cloud. It supports creating workloads with specific compliance regimes, monitoring violations, and managing organizational policies for regulatory compliance.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:55.000Z",
+    "updatedAt": "2026-07-28T01:45:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-db0e174b-7c56-4608-a778-f09bf7daac63"
+  },
+  "item": [
+    {
+      "name": "organizations",
+      "item": [
+        {
+          "name": "{organizationId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "workloads",
+                      "item": [
+                        {
+                          "name": "{workloadId}",
+                          "item": [
+                            {
+                              "name": "Google Cloud Assured Workloads Get a workload",
+                              "id": "ea747a53-acea-4ba7-ba89-cce288e3e1dd",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads/:workloadId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "organizations",
+                                    ":organizationId",
+                                    "locations",
+                                    ":location",
+                                    "workloads",
+                                    ":workloadId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "24dbe498-0b08-4b84-b906-709a5e3c80f5",
+                                      "key": "organizationId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "03bf518b-093b-4ed8-9835-5fe84318fef9",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "7ac2036c-3a19-40f4-91da-9e48ce5d3d94",
+                                      "key": "workloadId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Gets an assured workload by resource name."
+                              },
+                              "response": [
+                                {
+                                  "id": "f7386079-eda4-4e96-89e4-401f8d2b8047",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads/:workloadId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "organizations",
+                                        ":organizationId",
+                                        "locations",
+                                        ":location",
+                                        "workloads",
+                                        ":workloadId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "organizationId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "workloadId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"complianceRegime\": \"EU_REGIONS_AND_SUPPORT\",\n  \"billingAccount\": \"<string>\",\n  \"labels\": {\n    \"idc91\": \"<string>\",\n    \"dolore_33\": \"<string>\"\n  },\n  \"provisionedResourcesParent\": \"<string>\",\n  \"resources\": [\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"ENCRYPTION_KEYS_PROJECT\"\n    },\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"CONSUMER_PROJECT\"\n    }\n  ],\n  \"createTime\": \"<dateTime>\",\n  \"compliantButDisallowedServices\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:45:56.000Z",
+                                  "updatedAt": "2026-07-28T01:45:56.000Z",
+                                  "uid": "35240-f7386079-eda4-4e96-89e4-401f8d2b8047"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:45:56.000Z",
+                              "updatedAt": "2026-07-28T01:45:56.000Z",
+                              "uid": "35240-ea747a53-acea-4ba7-ba89-cce288e3e1dd"
+                            },
+                            {
+                              "name": "Google Cloud Assured Workloads Update a workload",
+                              "id": "cf2f1e61-68b1-4645-8c61-8f0bdc47a65e",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"complianceRegime\": \"EU_REGIONS_AND_SUPPORT\",\n  \"billingAccount\": \"<string>\",\n  \"labels\": {\n    \"idc91\": \"<string>\",\n    \"dolore_33\": \"<string>\"\n  },\n  \"provisionedResourcesParent\": \"<string>\",\n  \"resources\": [\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"ENCRYPTION_KEYS_PROJECT\"\n    },\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"CONSUMER_PROJECT\"\n    }\n  ],\n  \"createTime\": \"<dateTime>\",\n  \"compliantButDisallowedServices\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads/:workloadId?updateMask=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "organizations",
+                                    ":organizationId",
+                                    "locations",
+                                    ":location",
+                                    "workloads",
+                                    ":workloadId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "updateMask",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "a71d1c1a-af03-4646-9d70-cf35df18c2c5",
+                                      "key": "organizationId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "afd9ca6a-3722-4184-bcd4-9e0b69fd38b7",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "2699b8c1-f81e-449c-9592-34fd59494116",
+                                      "key": "workloadId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Updates an existing assured workload."
+                              },
+                              "response": [
+                                {
+                                  "id": "23b62e03-ff8a-44f3-9524-c8e0144a69fb",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "PATCH",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"complianceRegime\": \"EU_REGIONS_AND_SUPPORT\",\n  \"billingAccount\": \"<string>\",\n  \"labels\": {\n    \"idc91\": \"<string>\",\n    \"dolore_33\": \"<string>\"\n  },\n  \"provisionedResourcesParent\": \"<string>\",\n  \"resources\": [\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"ENCRYPTION_KEYS_PROJECT\"\n    },\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"CONSUMER_PROJECT\"\n    }\n  ],\n  \"createTime\": \"<dateTime>\",\n  \"compliantButDisallowedServices\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads/:workloadId?updateMask=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "organizations",
+                                        ":organizationId",
+                                        "locations",
+                                        ":location",
+                                        "workloads",
+                                        ":workloadId"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "updateMask",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "organizationId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "workloadId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"complianceRegime\": \"EU_REGIONS_AND_SUPPORT\",\n  \"billingAccount\": \"<string>\",\n  \"labels\": {\n    \"idc91\": \"<string>\",\n    \"dolore_33\": \"<string>\"\n  },\n  \"provisionedResourcesParent\": \"<string>\",\n  \"resources\": [\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"ENCRYPTION_KEYS_PROJECT\"\n    },\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"CONSUMER_PROJECT\"\n    }\n  ],\n  \"createTime\": \"<dateTime>\",\n  \"compliantButDisallowedServices\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "createdAt": "2026-07-28T01:45:56.000Z",
+                                  "updatedAt": "2026-07-28T01:45:56.000Z",
+                                  "uid": "35240-23b62e03-ff8a-44f3-9524-c8e0144a69fb"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:45:56.000Z",
+                              "updatedAt": "2026-07-28T01:45:56.000Z",
+                              "uid": "35240-cf2f1e61-68b1-4645-8c61-8f0bdc47a65e"
+                            },
+                            {
+                              "name": "Google Cloud Assured Workloads Delete a workload",
+                              "id": "6ce001e1-b1db-46eb-bb78-e24e511df73a",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads/:workloadId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "organizations",
+                                    ":organizationId",
+                                    "locations",
+                                    ":location",
+                                    "workloads",
+                                    ":workloadId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "7acf3cd2-7851-459b-9d22-1391ca8dc1de",
+                                      "key": "organizationId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "48f36dfe-a153-411d-92b4-b6503160dfaa",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "c4eb4cc3-3f9c-4e96-ab8e-31b58270861d",
+                                      "key": "workloadId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Deletes an assured workload."
+                              },
+                              "response": [
+                                {
+                                  "id": "ddd84051-984f-4bcf-b818-84bf295f5b7f",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads/:workloadId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "organizations",
+                                        ":organizationId",
+                                        "locations",
+                                        ":location",
+                                        "workloads",
+                                        ":workloadId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "organizationId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "workloadId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T01:45:56.000Z",
+                                  "updatedAt": "2026-07-28T01:45:56.000Z",
+                                  "uid": "35240-ddd84051-984f-4bcf-b818-84bf295f5b7f"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:45:56.000Z",
+                              "updatedAt": "2026-07-28T01:45:56.000Z",
+                              "uid": "35240-6ce001e1-b1db-46eb-bb78-e24e511df73a"
+                            }
+                          ],
+                          "id": "ea76b766-22bd-4b42-909b-3f539e2a2db5",
+                          "createdAt": "2026-07-28T01:45:56.000Z",
+                          "updatedAt": "2026-07-28T01:45:56.000Z",
+                          "uid": "35240-ea76b766-22bd-4b42-909b-3f539e2a2db5"
+                        },
+                        {
+                          "name": "Google Cloud Assured Workloads List workloads",
+                          "id": "490a2218-08d9-4369-bcb8-9c7ddc81c284",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "organizations",
+                                ":organizationId",
+                                "locations",
+                                ":location",
+                                "workloads"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "e5d63961-c78a-4e36-a4cd-aabd5203e920",
+                                  "key": "organizationId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "08b261a6-85a3-4c22-a64d-5429bf281bc9",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists assured workloads under a specified organization and location."
+                          },
+                          "response": [
+                            {
+                              "id": "28468875-f113-4415-9c79-fca35f8d1607",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads?pageSize=<integer>&pageToken=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "organizations",
+                                    ":organizationId",
+                                    "locations",
+                                    ":location",
+                                    "workloads"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "organizationId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"workloads\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"complianceRegime\": \"IL4\",\n      \"billingAccount\": \"<string>\",\n      \"labels\": {\n        \"fugiatae\": \"<string>\",\n        \"non05f\": \"<string>\"\n      },\n      \"provisionedResourcesParent\": \"<string>\",\n      \"resources\": [\n        {\n          \"resourceId\": \"<integer>\",\n          \"resourceType\": \"ENCRYPTION_KEYS_PROJECT\"\n        },\n        {\n          \"resourceId\": \"<integer>\",\n          \"resourceType\": \"KEYRING\"\n        }\n      ],\n      \"createTime\": \"<dateTime>\",\n      \"compliantButDisallowedServices\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"complianceRegime\": \"HIPAA\",\n      \"billingAccount\": \"<string>\",\n      \"labels\": {\n        \"amet4_\": \"<string>\"\n      },\n      \"provisionedResourcesParent\": \"<string>\",\n      \"resources\": [\n        {\n          \"resourceId\": \"<integer>\",\n          \"resourceType\": \"CONSUMER_PROJECT\"\n        },\n        {\n          \"resourceId\": \"<integer>\",\n          \"resourceType\": \"CONSUMER_PROJECT\"\n        }\n      ],\n      \"createTime\": \"<dateTime>\",\n      \"compliantButDisallowedServices\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:45:56.000Z",
+                              "updatedAt": "2026-07-28T01:45:56.000Z",
+                              "uid": "35240-28468875-f113-4415-9c79-fca35f8d1607"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:45:56.000Z",
+                          "updatedAt": "2026-07-28T01:45:56.000Z",
+                          "uid": "35240-490a2218-08d9-4369-bcb8-9c7ddc81c284"
+                        },
+                        {
+                          "name": "Google Cloud Assured Workloads Create a workload",
+                          "id": "5fb54321-f7b0-42aa-9604-9f190cdd2d81",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"complianceRegime\": \"EU_REGIONS_AND_SUPPORT\",\n  \"billingAccount\": \"<string>\",\n  \"labels\": {\n    \"idc91\": \"<string>\",\n    \"dolore_33\": \"<string>\"\n  },\n  \"provisionedResourcesParent\": \"<string>\",\n  \"resources\": [\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"ENCRYPTION_KEYS_PROJECT\"\n    },\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"CONSUMER_PROJECT\"\n    }\n  ],\n  \"createTime\": \"<dateTime>\",\n  \"compliantButDisallowedServices\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "organizations",
+                                ":organizationId",
+                                "locations",
+                                ":location",
+                                "workloads"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "26d91386-3206-4e63-ad93-d1e78c13931d",
+                                  "key": "organizationId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "711beb37-37df-461f-8283-d83a769aec49",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a new assured workload with the specified compliance regime."
+                          },
+                          "response": [
+                            {
+                              "id": "cb6c6e70-4b78-4bf6-8d18-33f1cd996a0f",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"complianceRegime\": \"EU_REGIONS_AND_SUPPORT\",\n  \"billingAccount\": \"<string>\",\n  \"labels\": {\n    \"idc91\": \"<string>\",\n    \"dolore_33\": \"<string>\"\n  },\n  \"provisionedResourcesParent\": \"<string>\",\n  \"resources\": [\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"ENCRYPTION_KEYS_PROJECT\"\n    },\n    {\n      \"resourceId\": \"<integer>\",\n      \"resourceType\": \"CONSUMER_PROJECT\"\n    }\n  ],\n  \"createTime\": \"<dateTime>\",\n  \"compliantButDisallowedServices\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/organizations/:organizationId/locations/:location/workloads",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "organizations",
+                                    ":organizationId",
+                                    "locations",
+                                    ":location",
+                                    "workloads"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "organizationId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\"\n}",
+                              "createdAt": "2026-07-28T01:45:56.000Z",
+                              "updatedAt": "2026-07-28T01:45:56.000Z",
+                              "uid": "35240-cb6c6e70-4b78-4bf6-8d18-33f1cd996a0f"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:45:56.000Z",
+                          "updatedAt": "2026-07-28T01:45:56.000Z",
+                          "uid": "35240-5fb54321-f7b0-42aa-9604-9f190cdd2d81"
+                        }
+                      ],
+                      "id": "7ecce9af-3c82-43ee-9502-860df499c414",
+                      "createdAt": "2026-07-28T01:45:56.000Z",
+                      "updatedAt": "2026-07-28T01:45:56.000Z",
+                      "uid": "35240-7ecce9af-3c82-43ee-9502-860df499c414"
+                    }
+                  ],
+                  "id": "674fa0d9-72da-42e7-bc9b-ed2742b294b4",
+                  "createdAt": "2026-07-28T01:45:56.000Z",
+                  "updatedAt": "2026-07-28T01:45:56.000Z",
+                  "uid": "35240-674fa0d9-72da-42e7-bc9b-ed2742b294b4"
+                }
+              ],
+              "id": "ca947c1a-fcaa-47b2-a612-cdaf95363556",
+              "createdAt": "2026-07-28T01:45:56.000Z",
+              "updatedAt": "2026-07-28T01:45:56.000Z",
+              "uid": "35240-ca947c1a-fcaa-47b2-a612-cdaf95363556"
+            }
+          ],
+          "id": "8939434a-ef64-4594-86ec-a44942f977ef",
+          "createdAt": "2026-07-28T01:45:56.000Z",
+          "updatedAt": "2026-07-28T01:45:56.000Z",
+          "uid": "35240-8939434a-ef64-4594-86ec-a44942f977ef"
+        }
+      ],
+      "id": "c6b49fd0-a7e3-45c9-9027-3c2919fbbe8c",
+      "createdAt": "2026-07-28T01:45:56.000Z",
+      "updatedAt": "2026-07-28T01:45:56.000Z",
+      "uid": "35240-c6b49fd0-a7e3-45c9-9027-3c2919fbbe8c"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://assuredworkloads.googleapis.com/v1"
+    }
+  ]
+}

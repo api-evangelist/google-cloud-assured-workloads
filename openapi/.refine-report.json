@@ -1,0 +1,16 @@
+{
+  "provider": "google-cloud-assured-workloads",
+  "sources": [
+    "google-cloud-assured-workloads-violations-api-openapi.yml",
+    "google-cloud-assured-workloads-workloads-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-assured-workloads-violations-api-openapi.yml",
+    "google-cloud-assured-workloads-workloads-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
