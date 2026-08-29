@@ -77,6 +77,9 @@ apis:
   - type: JSONSchema
     url: json-schema/google-cloud-assured-workloads-workload-schema.json
 common:
+  - type: CapabilityMap
+    url: capabilities/google-cloud-assured-workloads-capability-edges.yml
+    name: Google Cloud Assured Workloads Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/google-cloud-assured-workloads/overview
   - type: AgenticAccess
