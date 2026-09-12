@@ -77,6 +77,8 @@ apis:
   - type: JSONSchema
     url: json-schema/google-cloud-assured-workloads-workload-schema.json
 common:
+  - type: Website
+    url: https://www.google.com/
   - type: CapabilityMap
     url: capabilities/google-cloud-assured-workloads-capability-edges.yml
     name: Google Cloud Assured Workloads Business Capability Map
@@ -123,3 +125,5 @@ integrations:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-parent: google-cloud-platform
+x-relationship: product
