@@ -38,14 +38,24 @@ paths:
                 $ref: '#/components/schemas/ListViolationsResponse'
 components:
   parameters:
-    organizationId:
-      name: organizationId
+    location:
+      name: location
       in: path
       required: true
       schema:
         type: string
-    location:
-      name: location
+    pageToken:
+      name: pageToken
+      in: query
+      schema:
+        type: string
+    pageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+    organizationId:
+      name: organizationId
       in: path
       required: true
       schema:
@@ -56,17 +66,16 @@ components:
       required: true
       schema:
         type: string
-    pageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-    pageToken:
-      name: pageToken
-      in: query
-      schema:
-        type: string
   schemas:
+    ListViolationsResponse:
+      type: object
+      properties:
+        violations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Violation'
+        nextPageToken:
+          type: string
     Violation:
       type: object
       properties:
@@ -94,15 +103,6 @@ components:
         orgPolicyConstraint:
           type: string
         nonCompliantOrgPolicy:
-          type: string
-    ListViolationsResponse:
-      type: object
-      properties:
-        violations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Violation'
-        nextPageToken:
           type: string
   securitySchemes:
     oauth2:
