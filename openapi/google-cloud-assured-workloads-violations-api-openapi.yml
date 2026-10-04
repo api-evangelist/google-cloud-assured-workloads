@@ -38,8 +38,14 @@ paths:
                 $ref: '#/components/schemas/ListViolationsResponse'
 components:
   parameters:
-    location:
-      name: location
+    workloadId:
+      name: workloadId
+      in: path
+      required: true
+      schema:
+        type: string
+    organizationId:
+      name: organizationId
       in: path
       required: true
       schema:
@@ -54,14 +60,8 @@ components:
       in: query
       schema:
         type: integer
-    organizationId:
-      name: organizationId
-      in: path
-      required: true
-      schema:
-        type: string
-    workloadId:
-      name: workloadId
+    location:
+      name: location
       in: path
       required: true
       schema:
