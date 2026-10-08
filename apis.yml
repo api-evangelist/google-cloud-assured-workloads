@@ -76,6 +76,12 @@ apis:
   - type: JSONSchema
     url: json-schema/google-cloud-assured-workloads-workload-schema.json
 common:
+- type: Plans
+  url: plans/google-cloud-assured-workloads-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/google-cloud-assured-workloads-rate-limits.yml
+- type: FinOps
+  url: finops/google-cloud-assured-workloads-finops.yml
 - type: Website
   url: https://www.google.com/
 - type: CapabilityMap
