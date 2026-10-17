@@ -116,35 +116,6 @@ paths:
         '200':
           description: Successful response
 components:
-  parameters:
-    workloadId:
-      name: workloadId
-      in: path
-      required: true
-      schema:
-        type: string
-    organizationId:
-      name: organizationId
-      in: path
-      required: true
-      schema:
-        type: string
-    pageToken:
-      name: pageToken
-      in: query
-      schema:
-        type: string
-    pageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-    location:
-      name: location
-      in: path
-      required: true
-      schema:
-        type: string
   schemas:
     ListWorkloadsResponse:
       type: object
@@ -217,6 +188,35 @@ components:
           type: array
           items:
             type: string
+  parameters:
+    pageToken:
+      name: pageToken
+      in: query
+      schema:
+        type: string
+    location:
+      name: location
+      in: path
+      required: true
+      schema:
+        type: string
+    workloadId:
+      name: workloadId
+      in: path
+      required: true
+      schema:
+        type: string
+    organizationId:
+      name: organizationId
+      in: path
+      required: true
+      schema:
+        type: string
+    pageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
   securitySchemes:
     oauth2:
       type: oauth2
