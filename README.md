@@ -1,4 +1,4 @@
-# Google Cloud Assured Workloads (google-cloud-assured-workloads)
+# Google Cloud Assured Workloads
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,153 @@
 
 Google Cloud Assured Workloads enables organizations to create and manage compliance-controlled environments on Google Cloud. It provides guardrails for regulatory compliance frameworks such as FedRAMP, HIPAA, CJIS, ITAR, and others by enforcing organizational policies, data residency requirements, and access controls on cloud resources within designated workload environments.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-assured-workloads/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-assured-workloads/refs/heads/main/apis.yml)
+**Areas:** Compliance · Data Residency · FedRAMP · Governance · HIPAA · Regulatory
 
-## Scope
+## Google Cloud Assured Workloads on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud Assured Workloads is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-assured-workloads/](https://apis.io/providers/google-cloud-assured-workloads/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Compliance
-- Data Residency
-- FedRAMP
-- Governance
-- HIPAA
-- Regulatory
+- [Google Cloud Assured Workloads Violations API](https://apis.io/apis/google-cloud-assured-workloads/google-cloud-assured-workloads-violations-api/) — Operations for managing compliance violations
+- [Google Cloud Assured Workloads API](https://apis.io/apis/google-cloud-assured-workloads/google-cloud-assured-workloads-workloads-api/) — Operations for managing assured workloads
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Assured Workloads API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Assured Workloads API enables developers to programmatically create, manage, and monitor compliance-controlled workload environments on Google Cloud. It supports creating workloads with specific compliance regimes, managing organizational policies, monitoring compliance violations, and configuring data residency and access controls. The API helps organizations maintain regulatory compliance across their cloud infrastructure.
+- [Google Cloud Assured Workloads Agentic Access](https://apis.io/agentic-access/google-cloud-assured-workloads/google-cloud-assured-workloads-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/assured-workloads/docs](https://cloud.google.com/assured-workloads/docs)
-- **Base URL:** `https://assuredworkloads.googleapis.com`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Compliance Regimes
-- Organizational Policies
-- Violations
-- Workloads
+- [Google Cloud Assured Workloads Workload](https://apis.io/schemas/google-cloud-assured-workloads/google-cloud-assured-workloads-workload/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/assured-workloads/docs/reference/rest)
-- [OpenAPI](openapi/assured-workloads-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/assured-workloads-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/assured-workloads-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/assured-workloads/docs/reference/rest#authentication)
-- [JSON Schema](json-schema/google-cloud-assured-workloads-workload-schema.json) — [JSON Schema](https://json-schema.org/specification)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Google Cloud Assured Workloads Context](https://apis.io/jsonld/google-cloud-assured-workloads/google-cloud-assured-workloads-context/)
 
-- [GitHub Organization](https://github.com/GoogleCloudPlatform)
-- [Portal](https://cloud.google.com/assured-workloads)
-- [Getting Started](https://cloud.google.com/assured-workloads/docs/quickstart)
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud Assured Workloads API](https://apis.io/collections/google-cloud-assured-workloads/open-assured-workloads-api/)
+- [Google Cloud Assured Workloads Violations API](https://apis.io/collections/google-cloud-assured-workloads/open-google-cloud-assured-workloads-violations-api/)
+- [Google Cloud Assured Violations Workloads API](https://apis.io/collections/google-cloud-assured-workloads/open-google-cloud-assured-workloads-workloads-api/)
+- [Google Cloud Assured Workloads Violations API](https://apis.io/collections/google-cloud-assured-workloads/postman-google-cloud-assured-workloads-violations-api/)
+- [Google Cloud Assured Violations Workloads API](https://apis.io/collections/google-cloud-assured-workloads/postman-google-cloud-assured-workloads-workloads-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Assured Workloads — jsonschema rules](https://apis.io/rules/google-cloud-assured-workloads/google-cloud-assured-workloads-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Assured Workloads Authentication](https://apis.io/security/google-cloud-assured-workloads/google-cloud-assured-workloads-authentication/)
+- [Google Cloud Assured Workloads Domain Security](https://apis.io/security/google-cloud-assured-workloads/google-cloud-assured-workloads-domain-security/)
+- [Google Cloud Assured Workloads Vulnerability Disclosure](https://apis.io/security/google-cloud-assured-workloads/google-cloud-assured-workloads-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Assured Workloads Scopes](https://apis.io/scopes/google-cloud-assured-workloads/google-cloud-assured-workloads-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Assured Workloads Plans Pricing](https://apis.io/plans/google-cloud-assured-workloads/google-cloud-assured-workloads-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Assured Workloads Rate Limits](https://apis.io/rate-limits/google-cloud-assured-workloads/google-cloud-assured-workloads-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Assured Workloads Finops](https://apis.io/finops/google-cloud-assured-workloads/google-cloud-assured-workloads-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/assured-workloads/docs)
-- [Authentication](https://cloud.google.com/assured-workloads/docs/reference/rest#authentication)
+- [Getting started](https://cloud.google.com/assured-workloads/docs/quickstart)
 - [Pricing](https://cloud.google.com/assured-workloads/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com)
 - [Support](https://cloud.google.com/assured-workloads/docs/support)
-- [JSON-LD](json-ld/google-cloud-assured-workloads-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Blog](https://docs.cloud.google.com/feeds/assuredworkloads-release-notes.xml)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/GoogleCloudPlatform)
+- [Status](https://status.cloud.google.com)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 45.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 56.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 39.3 |
+| Access clarity | 39.5 |
+
+**Agent readiness 24.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-assured-workloads/](https://apis.io/providers/google-cloud-assured-workloads/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Assured Workloads: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-assured-workloads/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
